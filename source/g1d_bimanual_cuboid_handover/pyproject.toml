@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools", "wheel", "toml"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "g1d_bimanual_cuboid_handover"
+version = "0.1.0"
+description = "G1-D bimanual cuboid handover (right-to-left) environment for Isaac Lab — teleop, Mimic, imitation learning."
+dependencies = [
+    "psutil",
+]
+requires-python = ">=3.10"
+license = { text = "Apache 2.0" }
+authors = [
+    { name = "SmartDev" }
+]
+dynamic = []

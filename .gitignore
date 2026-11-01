@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.eggs/
+dist/
+build/
+*.so
+.env.teleop
+datasets/*.hdf5
+datasets/**/*.hdf5
+logs/
+outputs/
+
+place_debug.log

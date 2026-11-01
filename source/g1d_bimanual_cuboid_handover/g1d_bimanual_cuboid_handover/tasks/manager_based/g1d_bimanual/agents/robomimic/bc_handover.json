@@ -1,0 +1,104 @@
+{
+    "algo_name": "bc",
+    "experiment": {
+        "name": "g1d_bimanual_cuboid_handover_bc",
+        "validate": false,
+        "logging": {
+            "terminal_output_to_txt": true,
+            "log_tb": true
+        },
+        "save": {
+            "enabled": true,
+            "every_n_epochs": 50
+        },
+        "epoch_every_n_steps": 100,
+        "rollout": {
+            "enabled": false
+        }
+    },
+    "train": {
+        "data": "",
+        "output_dir": "",
+        "num_data_workers": 2,
+        "hdf5_cache_mode": "all",
+        "hdf5_use_swmr": true,
+        "hdf5_normalize_obs": false,
+        "hdf5_filter_key": null,
+        "seq_length": 1,
+        "dataset_keys": [
+            "actions"
+        ],
+        "goal_mode": null,
+        "cuda": true,
+        "batch_size": 100,
+        "num_epochs": 200,
+        "seed": 1
+    },
+    "algo": {
+        "optim_params": {
+            "policy": {
+                "learning_rate": {
+                    "initial": 0.0001,
+                    "decay_factor": 0.1,
+                    "epoch_schedule": []
+                },
+                "regularization": {
+                    "L2": 0.0
+                }
+            }
+        },
+        "loss": {
+            "l2_weight": 1.0,
+            "l1_weight": 0.0,
+            "cos_weight": 0.0
+        },
+        "actor_layer_dims": [
+            256,
+            256,
+            256
+        ],
+        "gaussian": {
+            "enabled": false
+        },
+        "gmm": {
+            "enabled": false
+        },
+        "vae": {
+            "enabled": false
+        },
+        "rnn": {
+            "enabled": false
+        }
+    },
+    "observation": {
+        "modalities": {
+            "obs": {
+                "low_dim": [
+                    "joint_pos",
+                    "joint_vel",
+                    "object_position",
+                    "object_orientation",
+                    "object_linear_velocity",
+                    "object_angular_velocity",
+                    "right_eef_pos",
+                    "right_eef_quat",
+                    "left_eef_pos",
+                    "left_eef_quat",
+                    "target_object_position",
+                    "handover_position"
+                ],
+                "rgb": [],
+                "depth": [],
+                "scan": []
+            }
+        },
+        "encoder": {
+            "low_dim": {
+                "core_class": null,
+                "core_kwargs": {},
+                "obs_randomizer_class": null,
+                "obs_randomizer_kwargs": {}
+            }
+        }
+    }
+}
